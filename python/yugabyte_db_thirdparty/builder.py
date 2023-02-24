@@ -386,6 +386,8 @@ class Builder(BuilderInterface):
                 'cassandra_cpp_driver',
                 'krb5',
                 'hdrhistogram',
+                'otel_proto',
+                'otel'
             ])
 
     def select_dependencies_to_build(self) -> None:
