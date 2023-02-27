@@ -106,3 +106,4 @@ f5d70cf25e45f0d0143084928cda9209c33fee560dcb45650e02f13bb458d8f2  squeasel-d83cf
 12ca258f5ba6849bb4ebc7135caea64f789f362e89efbc8e3dc903ec9cff7942  opentelemetry-proto-0.1.0.tar.gz
 c54cdf7af5931b3aa3798f0b1ae46c083bb0f20374a3ee6967886d3f963cce69  opentelemetry-proto-0.1.1.tar.gz
 f36551e1d423ae031b2407a2e550dbce440d7ad8e9bc681347d6c4b7d8bf13cf  opentelemetry-proto-0.1.2.tar.gz
+5dbbd532661dfe9c9b0aaa89e043b1528781bf83ad2c86b4843a73d9f35a762d  opentelemetry-cpp-1.8.2.v1.tar.gz
