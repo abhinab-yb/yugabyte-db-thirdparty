@@ -301,20 +301,20 @@ class Builder(BuilderInterface):
 
         self.dependencies = get_deps_from_module_names([
             # Avoiding a name collision with the standard zlib module, hence "zlib_dependency".
-            'zlib_dependency',
-            'lz4',
-            'openssl',
-            'libev',
-            'rapidjson',
-            'squeasel',
-            'curl',
-            'hiredis',
-            'cqlsh',
-            'flex',
-            'bison',
-            'openldap',
-            'redis_cli',
-            'wyhash',
+            # 'zlib_dependency',
+            # 'lz4',
+            # 'openssl',
+            # 'libev',
+            # 'rapidjson',
+            # 'squeasel',
+            # 'curl',
+            # 'hiredis',
+            # 'cqlsh',
+            # 'flex',
+            # 'bison',
+            # 'openldap',
+            # 'redis_cli',
+            # 'wyhash',
         ])
         for dep in self.dependencies:
             if dep.build_group != BUILD_GROUP_COMMON:
@@ -363,28 +363,29 @@ class Builder(BuilderInterface):
             # On macOS, flex, bison, and krb5 depend on gettext, and we don't want to use gettext
             # from Homebrew.
             # libunistring is required by gettext.
-            (
-                ['libunistring', 'gettext'] if is_macos() else []
-            ) + [
-                'ncurses',
-            ] + (
-                [] if is_macos() else ['libkeyutils', 'libverto', 'abseil', 'tcmalloc']
-            ) + [
-                'libedit',
-                'icu4c',
-                'protobuf',
-                'crypt_blowfish',
-                'boost',
-                'gflags',
-                'glog',
-                'gperftools',
-                'googletest',
-                'snappy',
-                'crcutil',
-                'libcds',
-                'libuv',
-                'cassandra_cpp_driver',
-                'krb5',
+            # (
+            #     ['libunistring', 'gettext'] if is_macos() else []
+            # ) + [
+            #     'ncurses',
+            # ] + (
+            #     [] if is_macos() else ['libkeyutils', 'libverto', 'abseil', 'tcmalloc']
+            # ) + 
+            [
+            #     'libedit',
+            #     'icu4c',
+            #     'protobuf',
+            #     'crypt_blowfish',
+            #     'boost',
+            #     'gflags',
+            #     'glog',
+            #     'gperftools',
+            #     'googletest',
+            #     'snappy',
+            #     'crcutil',
+            #     'libcds',
+            #     'libuv',
+            #     'cassandra_cpp_driver',
+            #     'krb5',
                 'otel_proto',
                 'otel'
             ])
