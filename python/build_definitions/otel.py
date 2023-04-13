@@ -20,8 +20,8 @@ class OtelDependency(Dependency):
     def __init__(self) -> None:
         super(OtelDependency, self).__init__(
             name='opentelemetry-cpp',
-            version='1.8.2.v1',
-            url_pattern='https://github.com/vrajat/opentelemetry-cpp/archive/refs/tags/v{0}.tar.gz',
+            version='1.8.2.v2',
+            url_pattern='https://github.com/abhinab-yb/opentelemetry-cpp/archive/refs/tags/v1.8.2.v2.tar.gz',
             build_group=BUILD_GROUP_INSTRUMENTED)
         self.copy_sources = False
 
