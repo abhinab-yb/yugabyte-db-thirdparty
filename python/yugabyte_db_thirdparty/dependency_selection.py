@@ -20,24 +20,24 @@ from yugabyte_db_thirdparty.compiler_choice import CompilerChoice
 
 DEFAULT_COMMON_DEPENDENCY_MODULE_NAMES = [
     # Avoiding a name collision with the standard Python zlib module, hence "zlib_dependency".
-    # 'zlib_dependency',
+    'zlib_dependency',
 
-    # 'lz4',
-    # 'openssl',
-    # 'openssl_fips',
-    # 'libev',
-    # 'rapidjson',
-    # 'squeasel',
-    # 'curl',
-    # 'hiredis',
-    # 'cqlsh',
-    # 'flex',
-    # 'bison',
-    # 'openldap',
-    # 'redis_cli',
-    # 'wyhash',
-    # 'jwt_cpp',
-    # "clockbound",
+    'lz4',
+    'openssl',
+    'openssl_fips',
+    'libev',
+    'rapidjson',
+    'squeasel',
+    'curl',
+    'hiredis',
+    'cqlsh',
+    'flex',
+    'bison',
+    'openldap',
+    'redis_cli',
+    'wyhash',
+    'jwt_cpp',
+    "clockbound",
 ]
 
 
@@ -51,12 +51,12 @@ def get_final_dependency_module_names(compiler_choice: CompilerChoice) -> List[s
     """
     dep_names: List[str] = []
 
-    # if is_macos():
-    #     # On macOS, flex, bison, and krb5 depend on gettext, and we don't want to use gettext from
-    #     # Homebrew. libunistring is required by gettext.
-    #     dep_names.extend(['libunistring', 'gettext'])
+    if is_macos():
+        # On macOS, flex, bison, and krb5 depend on gettext, and we don't want to use gettext from
+        # Homebrew. libunistring is required by gettext.
+        dep_names.extend(['libunistring', 'gettext'])
 
-    # dep_names.append('ncurses')
+    dep_names.append('ncurses')
 
     if is_linux():
         dep_names.extend(['libkeyutils', 'libverto', 'libaio', 'abseil', 'tcmalloc'])
@@ -67,24 +67,24 @@ def get_final_dependency_module_names(compiler_choice: CompilerChoice) -> List[s
             dep_names.append('patchelf')
 
     dep_names.extend([
-        # 'libedit',
-        # 'icu4c',
-        # 'protobuf',
-        # 'crypt_blowfish',
-        # 'boost',
-        # 'gflags',
-        # 'glog',
-        # 'gperftools',
-        # 'googletest',
-        # 'snappy',
-        # 'crcutil',
-        # 'libcds',
-        # 'libuv',
-        # 'cassandra_cpp_driver',
-        # 'krb5',
-        # 'hdrhistogram',
-        # 'otel_proto',
-        # 'otel',
+        'libedit',
+        'icu4c',
+        'protobuf',
+        'crypt_blowfish',
+        'boost',
+        'gflags',
+        'glog',
+        'gperftools',
+        'googletest',
+        'snappy',
+        'crcutil',
+        'libcds',
+        'libuv',
+        'cassandra_cpp_driver',
+        'krb5',
+        'hdrhistogram',
+        'otel_proto',
+        'otel',
         'antlr4'
     ])
 
